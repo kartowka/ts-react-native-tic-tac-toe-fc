@@ -6,15 +6,13 @@ import Tile from './Tile'
 import { BoardWrapper, RowWrapper } from '../../assets/wrappers'
 import { player, tile } from '../types'
 import { Circle, Cross, QuestionMark } from '../icons'
+import { StatusBar } from 'expo-status-bar'
 
 const Board: FC = () => {
 	const hasQuestion = [true, true, true, true, true, true, true, true, true]
 	const player: player = { player: 'x' }
-	const [lazyRefresher, setLazyRefresher] = useState<number>(0)
 	const [board, setBoard] = useState<tile[]>([])
-	const handleReRender = () => {
-		setLazyRefresher((lazyRefresher) => lazyRefresher + 1)
-	}
+
 	const checkBoardForQuestionMarks = (hasQuestion: Array<boolean>) => {
 		board.forEach((element) => {
 			element.symbol.name == 'Question' ? (hasQuestion[element.index] = true) : (hasQuestion[element.index] = false)
@@ -74,6 +72,7 @@ const Board: FC = () => {
 
 	return (
 		<View style={BoardWrapper.background}>
+			<StatusBar style='light' />
 			<View style={BoardWrapper.container}>
 				<GameName gameName='Tic Tac Toe' />
 				<View style={RowWrapper.container}>
