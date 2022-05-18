@@ -52,6 +52,8 @@ $ npm web
 
 <div align="center" style="width:image width px;">
   <img  src="https://github.com/kartowka/ts-react-native-tic-tac-toe-fc/blob/main/demo/Screen%20Shot%202022-05-18%20at%2016.20.11.png">
+  <img  src="https://github.com/kartowka/ts-react-native-tic-tac-toe-fc/blob/main/demo/Screen%20Shot%202022-05-18%20at%2016.20.18.png">
+  <img  src="https://github.com/kartowka/ts-react-native-tic-tac-toe-fc/blob/main/demo/Screen%20Shot%202022-05-18%20at%2016.20.28.png">
 </div>
 
 ## Deployment
