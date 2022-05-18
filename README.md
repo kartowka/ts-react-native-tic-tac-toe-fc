@@ -48,6 +48,12 @@ $ npm ios
 $ npm web
 ```
 
+## Illustration of the game
+
+<div align="center" style="width:image width px;">
+  <img  src="https://github.com/kartowka/ts-react-native-tic-tac-toe-fc/blob/main/demo/Screen%20Shot%202022-05-18%20at%2016.20.11.png">
+</div>
+
 ## Deployment
 
 Additional notes on how to deploy this on a live or release system. Explaining the most important branches, what pipelines they trigger and how to update the database (if anything special).
