@@ -9,16 +9,16 @@ import { Circle, Cross, QuestionMark } from '../icons'
 import { StatusBar } from 'expo-status-bar'
 
 const Board: FC = () => {
-	const hasQuestion = [true, true, true, true, true, true, true, true, true]
+	const hasQuestionMark = [true, true, true, true, true, true, true, true, true]
 	const player: player = { player: 'x' }
 	const [board, setBoard] = useState<tile[]>([])
 
-	const checkBoardForQuestionMarks = (hasQuestion: Array<boolean>) => {
+	const checkBoardForQuestionMarks = (hasQuestionMark: Array<boolean>) => {
 		board.forEach((element) => {
-			element.symbol.name == 'Question' ? (hasQuestion[element.index] = true) : (hasQuestion[element.index] = false)
+			element.symbol.name == 'Question' ? (hasQuestionMark[element.index] = true) : (hasQuestionMark[element.index] = false)
 		})
 
-		return hasQuestion.every((elem) => elem === false)
+		return hasQuestionMark.every((elem) => elem === false)
 	}
 	const handleClick = (index: number) => {
 		board[index].symbol = {
@@ -27,11 +27,11 @@ const Board: FC = () => {
 		}
 		player.player = player.player === 'x' ? 'o' : 'x'
 		board[index].tileState = true
-
-		if (winGame() != null) {
+		const winner = winGame()
+		if (winner != null) {
 			Alert.alert(`${winGame()} has won the Game!`)
-		} else if (checkBoardForQuestionMarks(hasQuestion) && winGame() == null) {
-			Alert.alert(`this is a tie`)
+		} else if (checkBoardForQuestionMarks(hasQuestionMark) && winner == null) {
+			Alert.alert(`its a tie!`)
 		}
 	}
 	const initialBoard = () => {
